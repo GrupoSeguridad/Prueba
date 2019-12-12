@@ -3,7 +3,6 @@
   connection: local
   tasks:
   - name: create user admin
-    fortios_system_admin:
      https: false
      state: present
      system_admin:
