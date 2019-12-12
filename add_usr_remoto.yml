@@ -1,21 +1,18 @@
 ---
 - hosts: all
-  connection: local
   tasks:
   - name: create user admin
-    fortios_system_admin:
-     state: present
-     system_admin:
-       accprofile: super_admin
-       accprofile_override: disable
-       allow_remove_admin_session: enable
-       comments: usuario 1 admin
-       email_to: omar.robayog.ext@claro.com.co
-       force_password_change: enable
-       fortitoken: disable
-       guest_auth: disable
-       name: admin2
-       password:
-       remote_auth: enable
-       remote_group: TACACS+
+    system_admin:
+     accprofile: super_admin
+     accprofile_override: disable
+     allow_remove_admin_session: enable
+     comments: usuario 1 admin
+     email_to: omar.robayog.ext@claro.com.co
+     force_password_change: enable
+     fortitoken: disable
+     guest_auth: disable
+     name: admin2
+     password:
+     remote_auth: enable
+     remote_group: TACACS+
 
