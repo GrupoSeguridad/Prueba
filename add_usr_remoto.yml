@@ -5,6 +5,7 @@
    ssl_verify: False
   tasks:
   - name: create user admin
+    username: Ansible
     fortios_system_admin:
      https: false
      system_admin:
