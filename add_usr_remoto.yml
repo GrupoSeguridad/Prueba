@@ -5,9 +5,8 @@
   - name: create user admin
     fortios_system_admin:
      system_admin:
-       host: all
-       username: all
-       password: all
+       host: 172.22.117.46
+       username: Ansible
        accprofile: super_admin
        accprofile_override: disable
        allow_remove_admin_session: enable
