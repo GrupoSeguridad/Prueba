@@ -5,6 +5,9 @@
   - name: create user admin
     fortios_system_admin:
      system_admin:
+       host: "{{ host }}"
+       username: "{{ username }}"
+       password: "{{ password }}"
        accprofile: super_admin
        accprofile_override: disable
        allow_remove_admin_session: enable
