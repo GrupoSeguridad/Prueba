@@ -1,8 +1,17 @@
 ---
 - hosts: all
   connection: local
+  vars:
+   host: all
+   username: "{{ username }}"
+   password: "{{ password }}"
+   ssl_verify: False
   tasks:
   - name: create user admin
+    fortios_system_admin:
+     host: "{{ host }}"
+     username: "{{ username }}"
+     password: "{{ password }}"
      https: false
      state: present
      system_admin:
@@ -14,7 +23,8 @@
        force_password_change: enable
        fortitoken: disable
        guest_auth: disable
-       name: admin3
-       password: 
+       name: admin2
+       password:
        remote_auth: enable
-       remote_group: TACACS+	
+       remote_group: TACACS+
+
