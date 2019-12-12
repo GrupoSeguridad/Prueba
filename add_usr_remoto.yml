@@ -1,12 +1,19 @@
 ---
 - hosts: all
   connection: local
+  vars:
+   host: 172.22.117.46
+   username: Ansible
+   password: Seguridad2019*
+   ssl_verify: False
   tasks:
   - name: create user admin
     fortios_system_admin:
+     host: "{{ host }}"
+     username: "{{ username }}"
+     password: "{{ password }}"
+     https: false
      system_admin:
-       host: 172.22.117.46
-       username: Ansible
        accprofile: super_admin
        accprofile_override: disable
        allow_remove_admin_session: enable
@@ -15,8 +22,7 @@
        force_password_change: enable
        fortitoken: disable
        guest_auth: disable
-       name: admin4
+       name: admin2
        password:
        remote_auth: enable
        remote_group: TACACS+
-
