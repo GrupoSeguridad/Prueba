@@ -1,18 +1,9 @@
 ---
 - hosts: all
   connection: local
-  vars:
-   host: all
-   username: "{{ username }}"
-   password: "{{ password }}"
-   ssl_verify: False
   tasks:
   - name: create user admin
     fortios_system_admin:
-     host: "{{ host }}"
-     username: "{{ username }}"
-     password: "{{ password }}"
-     https: false
      state: present
      system_admin:
        accprofile: super_admin
